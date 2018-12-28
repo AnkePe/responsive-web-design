@@ -2,7 +2,7 @@
 body {
     background-color: red;
 }
-/* wat is zichtbaar */
+/* wat is zichtbaar 
 div.small {
     display: block;
 }
@@ -12,6 +12,7 @@ div.medium {
 div.large {
     display: none;
 }
+*/
 /* opmaak phone*/
 h1 {
     font-size: 20px;
@@ -20,17 +21,18 @@ p {
     font-size: 12px;
 }
 /*medium scherm*/
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 400px) {
     body {
         background-color: green;
     }
-    /* wat is zichtbaar */
+    /* wat is zichtbaar 
     div.small {
         display: none;
     }
     div.medium {
         display: block;
     }
+    */
     /* opmaak tablet*/
     h1 {
         font-size: 30px;
@@ -38,25 +40,52 @@ p {
     p {
         font-size: 15px;
     }
+    /* layout*/   
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 500px 1fr;
+        grid-template-areas:    "a a b"
+                                "c c c";
+        
+    }
+
+    .small {
+        grid-area: a;
+    }
+    .medium {
+        grid-area: b;
+    }
+    .large {
+        grid-area: c;
+    }
+
 }
 
 /*groot scherm*/
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 900px) {
     body {
         background-color: blue;
     }
-    /* wat is zichtbaar */
+    /* wat is zichtbaar 
     div.medium {
         display: none;
     }
     div.large {
         display: block;
     }
+    */
     /* opmaak desktop*/
     h1 {
         font-size: 40px;
     }
     p {
         font-size: 18px;
+    }
+    /* layout */
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
